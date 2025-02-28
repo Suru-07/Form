@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet " href="style.css">
+</head>
+<body>
+    <div class="container">
+      <h2>Enter your Text:</h2>
+      <form action="output.html" method="GET"  on submit="return sendData()">
+          <input type="text" id="Suraksha" name="Suraksha Chhetri" placeholder="Type here....."required>
+
+          <button type ="submit">Show Output</button>
+ </form>
+ </div>
+
+ <script>
+    function sendData(){
+        let inputText= document.getElementById("Suraksha").value;
+
+        if (inputText.trim().toLowerCase() !== "suraksha"){
+    alert("Please enter 'Suraksha' to proceed!");
+    return false;
+        }
+        return true;
+   }
+ </script>
+
+
+
+</body>
+</html>

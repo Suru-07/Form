@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>✨ Your text appears below ✨</h2>
+    <p id="outputText">Loading...</p>
+    <p id="result"></p>
+    
+    <a href="index.html">Go Back</a>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        let userInput = getQueryParam("Suraksha Chhetri"); // Get user input from URL
+
+        if (userInput) {
+            document.getElementById("outputText").textContent = "You entered: " + userInput;
+
+            // Check if input matches "Suraksha" (case-insensitive)
+            if (userInput.trim().toLowerCase() === "suraksha") {
+                document.getElementById("result").innerHTML = "<b style='color: green;'>✅ Correct Input!</b>";
+            } else {
+                document.getElementById("result").innerHTML = "<b style='color: red;'>❌ Incorrect Input!</b>";
+            }
+        } else {
+            document.getElementById("outputText").textContent = "No input provided!";
+        }
+    </script>
+</body>
+</html>
